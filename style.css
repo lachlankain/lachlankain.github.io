@@ -1,74 +1,77 @@
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=P%C3%BAblico:wght@400&family=Founders+Grotesk:wght@400;500;600&display=swap');
-
 body {
-    font-family: 'Público', serif;
-    font-size: 10pt; /* increased from 8pt */
-    margin: 5mm;
-    background: white;
+  margin: 5mm;
+  background: white;
+  font-family: 'Público', serif;
+  font-size: 10pt; /* updated */
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10mm;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10mm; /* spacing before portfolio */
 }
 
-.logo {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: 12pt;
+.header-left .logo {
+  font-family: 'Founders Grotesk', sans-serif;
+  font-weight: 500; /* Heading 1 */
+  font-size: 12pt;
+  text-decoration: none;
+  color: black;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* more spacing between Work/Info */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* spaced out Work / Info */
 }
 
-.nav-link {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: 10pt;
-    text-decoration: none;
-    color: black;
+.header-right .nav-link {
+  font-family: 'Founders Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 12pt;
+  text-decoration: none;
+  color: black;
 }
 
-.instagram {
-    font-size: 10pt;
-    text-decoration: none;
+.header-right .instagram {
+  font-size: 12pt;
+  text-decoration: none;
+  color: black;
 }
 
 .portfolio {
-    display: flex;
-    gap: 1mm;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
 }
 
-.project {
-    position: relative;
-    flex: 1 1 calc(25% - 1mm); /* 4 projects per row */
-    margin-bottom: 1mm;
+.portfolio-row {
+  display: flex;
+  gap: 1mm;
 }
 
-.project img {
-    width: 100%;
-    height: auto;
-    display: block;
+.portfolio-item {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
 }
 
-.project-name {
-    position: absolute;
-    top: 1mm;
-    left: 1mm;
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: 8pt;
-    color: black;
-    display: none;
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.project:hover .project-name {
-    display: block;
+.portfolio-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Founders Grotesk', sans-serif;
+  font-weight: 500; /* Heading 2 */
+  font-size: 8pt;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
