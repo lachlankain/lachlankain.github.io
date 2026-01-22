@@ -1,1 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+:root {
+  --border: 5mm;
+  --gap-small: 1mm;
+  --gap-header: 10mm;
+
+  --body-size: 8pt;
+  --h1-size: 12pt;
+  --h2-size: 8pt;
+}
+
+body {
+  background: white;
+  padding: var(--border);
+  font-family: Georgia, serif;
+  font-size: var(--body-size);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header a {
+  font-family: Arial, sans-serif;
+  font-size: var(--h1-size);
+  text-decoration: none;
+  color: black;
+  margin-left: 8px;
+}
+
+.logo {
+  margin-left: 0;
+}
+
+.portfolio {
+  margin-top: var(--gap-header);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-small);
+}
+
+.project {
+  position: relative;
+}
+
+.project-title {
+  font-family: Arial, sans-serif;
+  font-size: var(--h2-size);
+  margin-bottom: 1mm;
+  opacity: 0;
+}
+
+.project:hover .project-title {
+  opacity: 1;
+}
+
+.project img {
+  width: 100%;
+  display: block;
+}
