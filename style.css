@@ -1,20 +1,28 @@
-body {
-  margin: 5mm;
-  background: white;
-  font-family: 'Público', serif;
-  font-size: 10pt; /* updated */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.header {
+/* Body */
+body {
+  background: white;
+  padding: 10px; /* perimeter = 10px */
+  font-family: "Publico Roman", serif;
+  font-size: 10pt;
+}
+
+/* Header */
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10mm; /* spacing before portfolio */
+  margin-bottom: 30px; /* space below header */
 }
 
-.header-left .logo {
-  font-family: 'Founders Grotesk', sans-serif;
-  font-weight: 500; /* Heading 1 */
+.header-link {
+  font-family: "Founders Grotesk Medium", sans-serif;
   font-size: 12pt;
   text-decoration: none;
   color: black;
@@ -22,56 +30,54 @@ body {
 
 .header-right {
   display: flex;
-  align-items: center;
-  gap: 20px; /* spaced out Work / Info */
+  gap: 24px; /* increased spacing between Work / Info */
 }
 
-.header-right .nav-link {
-  font-family: 'Founders Grotesk', sans-serif;
-  font-weight: 500;
+.instagram {
+  font-family: "Founders Grotesk Medium", sans-serif;
   font-size: 12pt;
   text-decoration: none;
   color: black;
 }
 
-.header-right .instagram {
-  font-size: 12pt;
-  text-decoration: none;
-  color: black;
-}
-
+/* Portfolio */
 .portfolio {
   display: flex;
   flex-direction: column;
+  gap: 30px; /* same spacing between rows as header → photos */
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1mm;
 }
 
-.portfolio-row {
-  display: flex;
-  gap: 1mm;
-}
-
-.portfolio-item {
+/* Project */
+.project {
   position: relative;
-  flex: 1;
-  overflow: hidden;
 }
 
-.portfolio-item img {
+/* Hover title */
+.project-title {
+  font-family: "Founders Grotesk Medium", sans-serif;
+  font-size: 10pt;
+  position: absolute;
+  top: -14px; /* sits above image */
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s linear;
+}
+
+/* Show title on hover */
+.project:hover .project-title {
+  opacity: 1;
+}
+
+/* Images */
+.project img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.portfolio-caption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-family: 'Founders Grotesk', sans-serif;
-  font-weight: 500; /* Heading 2 */
-  font-size: 8pt;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2px 4px;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
 }
