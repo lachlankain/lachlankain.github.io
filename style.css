@@ -1,16 +1,18 @@
-/* Reset */
+/* Global reset */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Body */
+/* Base */
 body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
   background: white;
-  padding: 10px; /* perimeter = 10px */
-  font-family: "Publico Roman", serif;
-  font-size: 10pt;
+  color: black;
+  padding: 10px;
 }
 
 /* Header */
@@ -18,36 +20,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px; /* space below header */
 }
 
-.header-link {
-  font-family: "Founders Grotesk Medium", sans-serif;
-  font-size: 12pt;
+.site-title,
+.site-nav a {
   text-decoration: none;
   color: black;
+  font-size: 10px;
 }
 
-.header-right {
-  display: flex;
-  gap: 24px; /* increased spacing between Work / Info */
-}
-
-.instagram {
-  font-family: "Founders Grotesk Medium", sans-serif;
-  font-size: 12pt;
-  text-decoration: none;
-  color: black;
-}
-
-/* Portfolio */
+/* Portfolio grid */
 .portfolio {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; /* same spacing between rows as header → photos */
-}
-
-.row {
+  margin-top: 40mm;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1mm;
@@ -58,26 +42,25 @@ body {
   position: relative;
 }
 
-/* Hover title */
-.project-title {
-  font-family: "Founders Grotesk Medium", sans-serif;
-  font-size: 10pt;
-  position: absolute;
-  top: -14px; /* sits above image */
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s linear;
-}
-
-/* Show title on hover */
-.project:hover .project-title {
-  opacity: 1;
-}
-
-/* Images */
 .project img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Project text */
+.project-meta {
+  position: absolute;
+  top: -2.5mm;
+  left: 0;
+  display: flex;
+  gap: 5mm;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* Hover behaviour */
+.project:hover .project-meta {
+  opacity: 1;
 }
