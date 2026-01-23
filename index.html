@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lachlan Kain Photography</title>
-  <link href="https://fonts.googleapis.com/css2?family=P%C3%BAblico&family=Founders+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Lachlan Kain</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Header Bar -->
-  <header class="header">
+  <!-- Header -->
+  <header class="site-header">
     <div class="header-left">
-      <a href="index.html" class="logo">Lachlan Kain</a>
+      <a href="index.html" class="header-link">Lachlan Kain</a>
     </div>
+
     <div class="header-right">
-      <a href="index.html" class="nav-link">Work</a>
-      <a href="info.html" class="nav-link">Info</a>
-      <a href="https://instagram.com" target="_blank" class="instagram">IG</a>
+      <a href="index.html" class="header-link">Work</a>
+      <a href="info.html" class="header-link">Info</a>
+      <a href="#" class="instagram">IG</a>
     </div>
   </header>
 
   <!-- Portfolio -->
   <main class="portfolio">
-    <div class="portfolio-row">
-      <div class="portfolio-item">
+
+    <div class="row">
+      <div class="project">
+        <div class="project-title">Test Project 1</div>
         <img src="images/test1.jpg" alt="Test 1">
-        <div class="portfolio-caption">Test 1</div>
       </div>
-      <div class="portfolio-item">
+
+      <div class="project">
+        <div class="project-title">Test Project 2</div>
         <img src="images/test2.jpg" alt="Test 2">
-        <div class="portfolio-caption">Test 2</div>
       </div>
-      <div class="portfolio-item">
+
+      <div class="project">
+        <div class="project-title">Test Project 3</div>
         <img src="images/test3.jpg" alt="Test 3">
-        <div class="portfolio-caption">Test 3</div>
       </div>
-      <div class="portfolio-item">
+
+      <div class="project">
+        <div class="project-title">Test Project 4</div>
         <img src="images/test4.jpg" alt="Test 4">
-        <div class="portfolio-caption">Test 4</div>
       </div>
     </div>
+
+    <!-- Example second row -->
+    <div class="row">
+      <div class="project">
+        <div class="project-title">Test Project 5</div>
+        <img src="images/test1.jpg" alt="Test 5">
+      </div>
+
+      <div class="project">
+        <div class="project-title">Test Project 6</div>
+        <img src="images/test2.jpg" alt="Test 6">
+      </div>
+
+      <div class="project">
+        <div class="project-title">Test Project 7</div>
+        <img src="images/test3.jpg" alt="Test 7">
+      </div>
+
+      <div class="project">
+        <div class="project-title">Test Project 8</div>
+        <img src="images/test4.jpg" alt="Test 8">
+      </div>
+    </div>
+
   </main>
 
-  <script>
-    // Show caption on hover
-    const items = document.querySelectorAll('.portfolio-item');
-    items.forEach(item => {
-      const caption = item.querySelector('.portfolio-caption');
-      item.addEventListener('mouseenter', () => caption.style.opacity = 1);
-      item.addEventListener('mouseleave', () => caption.style.opacity = 0);
-    });
-  </script>
 </body>
 </html>
