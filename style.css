@@ -1,4 +1,4 @@
-/* Global reset */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,23 +7,23 @@
 
 /* Base */
 body {
+  background: white;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 10px;
-  background: white;
   color: black;
   padding: 10px;
 }
 
 /* Header */
-.site-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 40px;
 }
 
-.site-title,
-.site-nav a {
+.header a {
   text-decoration: none;
   color: black;
   font-size: 10px;
@@ -31,10 +31,9 @@ body {
 
 /* Portfolio grid */
 .portfolio {
-  margin-top: 40mm;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1mm;
+  gap: 30px;
 }
 
 /* Project */
@@ -42,25 +41,34 @@ body {
   position: relative;
 }
 
+/* Images */
 .project img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Project text */
-.project-meta {
+/* Labels */
+.project-label {
   position: absolute;
-  top: -2.5mm;
+  top: -14px;
   left: 0;
   display: flex;
-  gap: 5mm;
-  opacity: 0;
+  gap: 6px;
   pointer-events: none;
-  transition: opacity 0.15s ease;
 }
 
-/* Hover behaviour */
-.project:hover .project-meta {
+/* Number always visible */
+.project-number {
+  font-size: 10px;
+}
+
+/* Name only on hover */
+.project-name {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project:hover .project-name {
   opacity: 1;
 }
