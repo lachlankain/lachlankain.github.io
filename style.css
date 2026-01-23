@@ -10,15 +10,23 @@ body {
   background: white;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 14px; /* updated from 12px */
+  font-size: 14px;
   color: black;
   padding: 10px;
+  display: flex;
+  justify-content: center; /* centers the content */
+}
+
+/* Container to limit width */
+.container {
+  width: 100%;
+  max-width: 1200px; /* adjust to taste */
 }
 
 /* Header */
 .header {
   display: flex;
-  justify-content: space-between; /* ensures buttons stay right */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -30,7 +38,7 @@ body {
 
 /* Adjust spacing below header */
 .gallery {
-  margin-top: 20px; /* reduced by ~10mm from before */
+  margin-top: 20px; /* reduced 10mm from before */
 }
 
 /* Gallery grid */
@@ -50,12 +58,14 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover; /* keeps aspect ratio clean if cropped later */
+  max-height: 250px; /* optional: cap height for uniformity */
 }
 
 /* Project label (hidden by default) */
 .project-label {
   position: absolute;
-  top: -18px; /* slightly adjusted for larger font */
+  top: -18px;
   left: 0;
   display: flex;
   gap: 6px;
@@ -82,7 +92,7 @@ body {
   margin-top: 30px;
 }
 
-/* Responsive (optional safety net) */
+/* Responsive */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
