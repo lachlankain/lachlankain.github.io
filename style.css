@@ -1,0 +1,114 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px; /* global font size */
+  color: black;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px; /* space to first row */
+}
+
+.header .logo {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.header-links a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+/* Gallery Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1mm;
+}
+
+/* Project Wrapper */
+.project {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Images */
+.project img {
+  display: block;
+  width: 100%;
+  height: 200px; /* fixed height for uniformity */
+  object-fit: cover;
+}
+
+/* Project Label (hover) */
+.project-label {
+  position: absolute;
+  top: -20px; /* above image */
+  left: 2.5mm; /* half of side border */
+  display: flex;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* Show on hover */
+.project:hover .project-label {
+  opacity: 1;
+}
+
+/* Number + Title */
+.project-number {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.project-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Second row spacing */
+.grid + .grid {
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
