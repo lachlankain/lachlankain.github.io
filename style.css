@@ -5,22 +5,22 @@
   box-sizing: border-box;
 }
 
-/* Global */
+/* Body */
 body {
-  background: white;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 14px; /* global font size */
   color: black;
-  padding: 10px;
+  background: white;
   display: flex;
-  justify-content: center; /* centers the content */
+  justify-content: center;
 }
 
-/* Container to limit width */
+/* Container */
 .container {
   width: 100%;
-  max-width: 1200px; /* adjust to taste */
+  max-width: 1200px;
+  padding: 10px;
 }
 
 /* Header */
@@ -28,66 +28,74 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px; /* space to first row */
 }
 
-/* Header links */
-.header a {
+.header .logo {
   text-decoration: none;
   color: black;
+  font-weight: 700;
+  font-size: 14px;
 }
 
-/* Adjust spacing below header */
-.gallery {
-  margin-top: 20px; /* reduced 10mm from before */
+.header-links a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  font-size: 14px;
 }
 
-/* Gallery grid */
+/* Gallery Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1mm;
 }
 
-/* Project wrapper */
+/* Project Wrapper */
 .project {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Images */
 .project img {
-  width: 100%;
-  height: auto;
   display: block;
-  object-fit: cover; /* keeps aspect ratio clean if cropped later */
-  max-height: 250px; /* optional: cap height for uniformity */
+  width: 100%;
+  height: 200px; /* fixed height for uniformity */
+  object-fit: cover;
 }
 
-/* Project label (hidden by default) */
+/* Project Label (hover) */
 .project-label {
   position: absolute;
-  top: -18px;
-  left: 0;
+  top: -20px; /* above image */
+  left: 2.5mm; /* half of side border */
   display: flex;
-  gap: 6px;
+  gap: 5px;
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
 }
 
-/* Hover behaviour */
+/* Show on hover */
 .project:hover .project-label {
   opacity: 1;
 }
 
-/* Number + title */
-.project-number,
-.project-title {
-  font-size: 14px; /* matches global font */
+/* Number + Title */
+.project-number {
+  font-size: 14px;
   font-weight: 700;
-  white-space: nowrap;
 }
 
-/* Second row spacing (when you add more rows later) */
+.project-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Second row spacing */
 .grid + .grid {
   margin-top: 30px;
 }
