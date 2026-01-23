@@ -1,16 +1,16 @@
 /* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Base */
+/* Global */
 body {
   background: white;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 12px;
   color: black;
   padding: 10px;
 }
@@ -20,23 +20,26 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 40px;
 }
 
 .header a {
   text-decoration: none;
   color: black;
-  font-size: 10px;
 }
 
-/* Portfolio grid */
-.portfolio {
+/* Spacing below header */
+.gallery {
+  margin-top: 30px;
+}
+
+/* Gallery grid */
+.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 1mm;
 }
 
-/* Project */
+/* Project wrapper */
 .project {
   position: relative;
 }
@@ -48,27 +51,45 @@ body {
   display: block;
 }
 
-/* Labels */
+/* Project label (hidden by default) */
 .project-label {
   position: absolute;
-  top: -14px;
+  top: -16px; /* sits just above image */
   left: 0;
   display: flex;
   gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
   pointer-events: none;
 }
 
-/* Number always visible */
-.project-number {
-  font-size: 10px;
-}
-
-/* Name only on hover */
-.project-name {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.project:hover .project-name {
+/* Hover behaviour */
+.project:hover .project-label {
   opacity: 1;
+}
+
+/* Number + title */
+.project-number,
+.project-title {
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Second row spacing (when you add more rows later) */
+.grid + .grid {
+  margin-top: 30px;
+}
+
+/* Responsive (optional safety net) */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
